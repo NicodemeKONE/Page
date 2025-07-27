@@ -1,0 +1,94 @@
+GUIDE COMPLET – Gestion et mise à jour de la page GitHub Pages
+==============================================================
+
+Nom du dépôt GitHub : NicodemeKONE/Page
+URL du dépôt : https://github.com/NicodemeKONE/Page
+URL du site publié : https://nicodemekone.github.io/Page/
+
+Date de création du document : 2025-07-25
+
+--------------------------------------------------------------
+PARTIE 1 – Objectif du projet
+--------------------------------------------------------------
+
+Ce projet consiste à créer et publier un site web personnel statique sur GitHub Pages depuis un dossier local sous VS Code.
+
+Le dossier local utilisé :
+C:\Users\eunic\OneDrive\Documents\NICODEME\MaPage
+
+Contenu typique :
+- index.html
+- styles.css
+- scripts.js
+- images et documentation
+
+--------------------------------------------------------------
+PARTIE 2 – Étapes de publication (procédure initiale)
+--------------------------------------------------------------
+
+1. Ouvrir le terminal dans VS Code dans le dossier MaPage :
+   cd "C:\Users\eunic\OneDrive\Documents\NICODEME\MaPage"
+
+2. Initialiser Git (si pas encore fait) :
+   git init
+
+3. Ajouter tous les fichiers :
+   git add .
+
+4. Créer un commit :
+   git commit -m "Version propre et sécurisée du site"
+
+5. Lier le dépôt local au dépôt GitHub avec un token personnel :
+   git remote add origin https://TON_TOKEN@github.com/NicodemeKONE/Page.git
+
+   (Remplacer TON_TOKEN par un token GitHub classic généré sur :
+   https://github.com/settings/tokens)
+
+6. Renommer la branche par défaut en main (si nécessaire) :
+   git branch -M main
+
+7. Envoyer les fichiers vers GitHub :
+   git push -f origin main
+
+8. Supprimer ensuite le token de l’URL :
+   git remote set-url origin https://github.com/NicodemeKONE/Page.git
+
+
+
+--------------------------------------------------------------
+PARTIE 3 – Problème rencontré et résolution
+--------------------------------------------------------------
+
+Problème : GitHub bloquait les push avec l’erreur :
+"push declined due to repository rule violations"
+à cause d’un token accidentellement enregistré dans un fichier (token.txt)
+
+Résolution :
+- Supprimer complètement le dépôt local avec :
+    Remove-Item -Recurse -Force .git
+- Réinitialiser Git : git init
+- Lier à nouveau le dépôt distant avec le token personnel
+- Refaire un git add . puis git commit -m "..."
+- Pousser proprement : git push -f origin main
+- Supprimer le token de l’URL ensuite
+
+--------------------------------------------------------------
+PARTIE 4 – À chaque mise à jour du site
+--------------------------------------------------------------
+
+Quand tu modifies un fichier (ex : index.html, style.css…), voici les étapes :
+
+1. Ouvre ton terminal dans le dossier MaPage
+2. Tape les commandes suivantes :
+
+   git add .
+   git commit -m "Description de la modification"
+   git push
+
+Et c’est tout !
+
+Ton site sera mis à jour sur :
+https://nicodemekone.github.io/Page/
+
+--------------------------------------------------------------
+Fin du guide – Document généré automatiquement
