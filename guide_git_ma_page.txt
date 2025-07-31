@@ -62,6 +62,19 @@ PARTIE 2 – Étapes de publication (procédure initiale)
 
 
 
+
+
+
+
+# Cloner votre repo (si pas déjà fait)
+git clone https://github.com/NicodemeKONE/Analyseur_de_sentiment.git
+cd Analyseur_de_sentiment
+
+# Ajouter vos fichiers
+git add .
+git commit -m "Ajout de l'application Streamlit pour l'analyseur de sentiment"
+git push origin main
+
 --------------------------------------------------------------
 PARTIE 3 – Problème rencontré et résolution
 --------------------------------------------------------------
